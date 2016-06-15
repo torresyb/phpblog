@@ -81,6 +81,6 @@ function getActive($navc){
     }
 }
 
-function getLoginUser(){
-    return session('adminInfo') && session('adminInfo').username;
+function getLoginUserName(){
+    return $_SESSION['adminInfo']['username']?$_SESSION['adminInfo']['username']:'';
 }

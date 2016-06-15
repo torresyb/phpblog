@@ -20,7 +20,7 @@ class NewsModel extends Model
         $data['create_time'] = time();
         $data['count'] = 0;
         $data['status'] = '0';
-        $data['username'] = getLoginUser();
+        $data['username'] = getLoginUserName();
         
         $newsid = $this->_db->add($data);
         
