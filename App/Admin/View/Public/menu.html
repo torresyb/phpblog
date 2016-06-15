@@ -1,0 +1,9 @@
+<?php 
+	$navs = D('Menu')->getAdminMenus();
+?>
+
+<ul class="nav nav-pills nav-stacked">
+  <volist name="navs" id="nav">
+  	<li {$nav.c|getActive}><a href="/{$nav.m}/{$nav.c}/{$nav.f}">{$nav.name}</a></li>
+  </volist>
+</ul>

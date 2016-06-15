@@ -1,0 +1,23 @@
+<form action="" method = "post">
+	<h2 class="form-signin-heading text-center">请登录</h2>
+	<div class="form-group">
+		<label for="username">用户名</label> <input
+			type="text" class="form-control" id="username"
+			placeholder="填写用户名" name="username">
+	</div>
+	<div class="form-group">
+		<label for="password">密码</label> <input
+			type="password" name="password" class="form-control" id="password"
+			placeholder="填写密码">
+	</div>
+	<button type="button" class="btn btn-primary" id="submit">登 陆</button>
+</form>
+
+<script type="text/javascript" src="__PUBLIC__/js/login.js"></script>
+<script type="text/javascript">
+(function($){
+	$(function(){
+		$("#submit").on('click',{type:'1'},login.check)
+	});
+})(jQuery);
+</script>
