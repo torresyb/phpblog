@@ -79,23 +79,22 @@ KindEditor.ready(function(K) {
 				<label for="inputname" class="col-sm-2 control-label">标题:</label>
 				<div class="col-sm-5">
 					<input type="text" name="title" class="form-control" id="inputname"
-						placeholder="请填写标题">
+						placeholder="请填写标题" value="<?php echo ($new["title"]); ?>">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputname" class="col-sm-2 control-label">短标题:</label>
 				<div class="col-sm-5">
 					<input type="text" name="small_title" class="form-control"
-						id="inputname" placeholder="请填写短标题">
+						id="inputname" placeholder="请填写短标题" value="<?php echo ($new["small_title"]); ?>">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputname" class="col-sm-2 control-label">缩图:</label>
 				<div class="col-sm-5">
-					<input id="file_upload" name="file_upload" type="file" multiple="true"> <img
-						style="display: none" id="upload_org_code_img" src="" width="150"
-						height="150"> <input id="file_upload_image" name="thumb"
-						type="hidden" multiple="true" value="">
+					<input id="file_upload" name="file_upload" type="file" multiple="true"> 
+					<img <?php if(empty($new.thumb)): ?>style="display: none"<?php endif; ?> id="upload_org_code_img" src="<?php echo ($new["thumb"]); ?>" width="150" height="150"> 
+					<input id="file_upload_image" name="thumb" type="hidden" multiple="true" value="<?php echo ($new["thumb"]); ?>">
 				</div>
 			</div>
 			<div class="form-group">
@@ -104,7 +103,7 @@ KindEditor.ready(function(K) {
 					<select class="form-control" name="title_font_color">
 						<option value="">==请选择颜色==</option>
 
-						<?php if(is_array($titleColors)): $k = 0; $__LIST__ = $titleColors;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$titleColor): $mod = ($k % 2 );++$k;?><option value="<?php echo ($k); ?>"><?php echo ($titleColor); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+						<?php if(is_array($titleColors)): $k = 0; $__LIST__ = $titleColors;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$titleColor): $mod = ($k % 2 );++$k;?><option value="<?php echo ($k); ?>" <?php if($k == intval($new['title_font_color'])): ?>selected<?php endif; ?> ><?php echo ($titleColor); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
 
 					</select>
 				</div>
@@ -113,7 +112,7 @@ KindEditor.ready(function(K) {
 				<label for="inputname" class="col-sm-2 control-label">所属栏目:</label>
 				<div class="col-sm-5">
 					<select class="form-control" name="catid">
-						<?php if(is_array($menus)): $i = 0; $__LIST__ = $menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><option value="<?php echo ($menu["menu_id"]); ?>"><?php echo ($menu["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+						<?php if(is_array($menus)): $i = 0; $__LIST__ = $menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><option value="<?php echo ($menu["menu_id"]); ?>" <?php if($menu["menu_id"] == intval($new['catid'])): ?>selected<?php endif; ?> ><?php echo ($menu["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
 					</select>
 				</div>
 			</div>
@@ -122,7 +121,7 @@ KindEditor.ready(function(K) {
 				<label for="inputname" class="col-sm-2 control-label">来源:</label>
 				<div class="col-sm-5">
 					<select class="form-control" name="copyfrom">
-						<?php if(is_array($copyfroms)): $k = 0; $__LIST__ = $copyfroms;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$copyfrom): $mod = ($k % 2 );++$k;?><option value="<?php echo ($k); ?>"><?php echo ($copyfrom); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+						<?php if(is_array($copyfroms)): $k = 0; $__LIST__ = $copyfroms;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$copyfrom): $mod = ($k % 2 );++$k;?><option value="<?php echo ($k); ?>" <?php if($k == intval($new['copyfrom'])): ?>selected<?php endif; ?>><?php echo ($copyfrom); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
 					</select>
 				</div>
 			</div>
@@ -130,30 +129,31 @@ KindEditor.ready(function(K) {
 			<div class="form-group">
 				<label for="inputPassword3" class="col-sm-2 control-label">内容:</label>
 				<div class="col-sm-10">
-					<textarea class="input js-editor" id="editor_id"
-						name="content" rows="10"></textarea>
+					<textarea class="input js-editor" id="editor_id" name="content" rows="10">
+					<?php echo ($content["content"]); ?>
+					</textarea>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputPassword3" class="col-sm-2 control-label">描述:</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control" name="description"
-						id="inputPassword3" placeholder="描述">
+						id="inputPassword3" placeholder="描述" value="<?php echo ($new["description"]); ?>">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputPassword3" class="col-sm-2 control-label">关键字:</label>
 				<div class="col-sm-5">
 					<input type="text" class="form-control" name="keywords"
-						id="inputPassword3" placeholder="请填写关键词">
+						id="inputPassword3" placeholder="请填写关键词" value="<?php echo ($new["keywords"]); ?>">
 				</div>
 			</div>
 
 
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button type="button" class="btn btn-default"
-						id="button-submit">提交</button>
+					<input type="hidden" name='news_id' value=<?php echo ($new["news_id"]); ?> />
+					<button type="button" class="btn btn-default" id="button-submit">提交</button>
 				</div>
 			</div>
 		</form>
@@ -174,7 +174,11 @@ KindEditor.ready(function(K) {
 			e.preventDefault();
 			var data = $("form#myform").serialize();
 			$.post("/admin/content/add",{'data':data},function(result){
-				console.log(result);
+				if(result.status==1){
+					dialog.success(result.msg,"/admin/content/index");
+				}else{
+					dialog.error(result.msg);
+				}
 			},'json');
 		});
 	})(jQuery);

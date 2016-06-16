@@ -38,10 +38,7 @@
 			<?php  $navs = D('Menu')->getAdminMenus(); ?>
 
 <ul class="nav nav-pills nav-stacked">
-  <li role="presentation"><a href="#">管理中心</a></li>
-  <li role="presentation" class="active"><a href="/admin/menu/index">菜單管理</a></li>
-  <li role="presentation"><a href="#">用戶管理</a></li>
-  <?php if(is_array($navs)): $i = 0; $__LIST__ = $navs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$nav): $mod = ($i % 2 );++$i;?><li role="presentation"><a href="/<?php echo ($nav["m"]); ?>/<?php echo ($nav["c"]); ?>/<?php echo ($nav["f"]); ?>"><?php echo ($nav["name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+  <?php if(is_array($navs)): $i = 0; $__LIST__ = $navs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$nav): $mod = ($i % 2 );++$i;?><li <?php echo (getActive($nav["c"])); ?>><a href="/<?php echo ($nav["m"]); ?>/<?php echo ($nav["c"]); ?>/<?php echo ($nav["f"]); ?>"><?php echo ($nav["name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
 </ul>
 		</div>
 		<div id="main" class="col-sm-10"><h1>是的第四代45</h1></div>

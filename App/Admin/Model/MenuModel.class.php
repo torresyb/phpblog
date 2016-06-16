@@ -104,7 +104,7 @@ class MenuModel extends Model
             return $rst;
         }
         
-        return 0;
+        return false;
     }
     
     /**

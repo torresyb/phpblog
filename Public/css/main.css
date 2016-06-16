@@ -16,6 +16,7 @@ html,body{
 }
 #main{
 	background-color:#fff;
+	min-height:100%;
 }
 #menu{
 	padding-left:0px;

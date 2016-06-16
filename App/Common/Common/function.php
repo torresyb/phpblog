@@ -81,6 +81,51 @@ function getActive($navc){
     }
 }
 
+/**
+ * 获取用户名
+ * @return string
+ */
 function getLoginUserName(){
     return $_SESSION['adminInfo']['username']?$_SESSION['adminInfo']['username']:'';
+}
+
+/**
+ * 获取文章来源
+ * @param number $id
+ * @return string
+ */
+function getCopyFrom($id){
+    $copy_from = C('COPY_FROM');
+    return $copy_from[$id-1]?$copy_from[$id-1]:'';
+}
+
+/**
+ * 所属栏目
+ * @param array $menus
+ * @param number $id
+ * @return string
+ */
+function getCat($menus,$id){
+    foreach ($menus as $menu){
+        if($menu['menu_id']==$id){
+            return $menu['name'];
+        }
+    }
+}
+
+function getStatus($id){
+    switch ($id) {
+        case 0:
+            return '关闭';
+            break;
+        case 1:
+            return '正常';
+            break;
+        case -1:
+            return '删除';
+            break;
+        default:
+            return '';
+            break;
+    }
 }

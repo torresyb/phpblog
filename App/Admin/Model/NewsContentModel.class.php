@@ -12,6 +12,11 @@ class NewsContentModel extends Model
         $this->_db = M('news_content');
     }
     
+    /**
+     * 插入文章内容
+     * @param array $data
+     * @return number>
+     */
     public function insert($data=array()) 
     {
         if(!is_array($data) || !$data){
@@ -22,5 +27,26 @@ class NewsContentModel extends Model
             $data['content'] = htmlspecialchars($data['content']);
         }
         return $this->_db->add($data);
+    }
+    
+    /**
+     * 查询指定文章内容
+     * @param number $id
+     * @return number|array
+     */
+    public function getContent($id)
+    {
+        if(isset($id)){
+            $data['news_id'] = $id;
+            $rst = $this->_db->where($data)->find();
+            return $rst;
+        }
+        return false;
+    }
+    
+    public function updateContent($id,$content)
+    {
+        $rst = $this->_db->where("news_id=".$id)->save(array('content'=>$content,'update_time'=>time()));
+        return $rst;
     }
 }

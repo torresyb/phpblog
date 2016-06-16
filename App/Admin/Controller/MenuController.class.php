@@ -109,6 +109,9 @@ class MenuController extends CommonController
         show(0, '访问数据有误');
     }
     
+    /**
+     * 菜单列表排序
+     */
     public function orderlist()
     {
         if(IS_POST){
