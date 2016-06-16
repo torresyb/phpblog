@@ -113,6 +113,11 @@ function getCat($menus,$id){
     }
 }
 
+/**
+ * 更改文章状态
+ * @param number $id
+ * @return string
+ */
 function getStatus($id){
     switch ($id) {
         case 0:

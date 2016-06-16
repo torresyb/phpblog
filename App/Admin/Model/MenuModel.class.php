@@ -56,6 +56,11 @@ class MenuModel extends Model
         return 0;
     }
     
+    /**
+     * 删除菜单
+     * @param number $id
+     * @return boolean|number
+     */
     public function deletedMenu($id)
     {
         if(is_numeric($id)){

@@ -44,6 +44,12 @@ class NewsContentModel extends Model
         return false;
     }
     
+    /**
+     * 更新文章副表 文章内容
+     * @param number $id
+     * @param string $content
+     * @return boolean
+     */
     public function updateContent($id,$content)
     {
         $rst = $this->_db->where("news_id=".$id)->save(array('content'=>$content,'update_time'=>time()));
