@@ -50,7 +50,7 @@ function getMenuType($type){
  */
 function getMenuStatus($status){
     $str = '';
-    switch ($type){
+    switch ($status){
         case 0 :
             $str = '关闭状态';
             break;

@@ -132,4 +132,17 @@ class NewsModel extends Model
         }
         return false;
     }
+    
+    
+    public function getNewsByNewsIdIn($news_id=array())
+    {
+        if(is_array($news_id)){
+            $data = array('news_id'=>array('in',implode(',', $news_id)));
+            $rst = $this->_db->where($data)->select();
+//             echo  $this->_db->getLastSql();
+            return $rst;
+        }
+        return  false;
+    }
+    
 }

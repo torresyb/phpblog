@@ -62,8 +62,8 @@
 	<form action="/admin/content/index" method="get">
 		<div class="col-md-3">
 			<div class="input-group">
-				<span class="input-group-addon">栏目</span> <select
-					class="form-control" name="catid">
+				<span class="input-group-addon">栏目</span> 
+				<select class="form-control" name="catid">
 					<option value=''>全部分类</option>
 					<?php if(is_array($menus)): $i = 0; $__LIST__ = $menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><option value="<?php echo ($menu["menu_id"]); ?>" <?php if($_GET[catid]): ?>selected<?php endif; ?> ><?php echo ($menu["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
 				</select>
@@ -85,10 +85,11 @@
 <div class="row">
 	<div class="col-lg-12">
 		<div class="table-responsive">
-			<form id="listorder">
+			<form id="listorder" class="gb20">
 				<table class="table table-bordered table-hover table">
 					<thead>
 						<tr>
+							<th><input type="checkbox" name="check_all" id="check_all" /></th>
 							<th width="14">排序</th>
 							<th>id</th>
 							<th>标题</th>
@@ -102,6 +103,7 @@
 					</thead>
 					<tbody>
 						<?php if(is_array($news)): foreach($news as $key=>$new): ?><tr>
+							<td><input type="checkbox" name='check_item' value="<?php echo ($new["news_id"]); ?>" /></td>
 							<td><input size=4 type='text' name='listorder[<?php echo ($new["news_id"]); ?>]' value="<?php echo ($new["listorder"]); ?>" /></td>
 							<td><?php echo ($new["news_id"]); ?></td>
 							<td><?php echo ($new["title"]); ?></td>
@@ -119,11 +121,20 @@
 						</tr><?php endforeach; endif; ?>
 					</tbody>
 				</table>
+				
 				<button id="button-orderlist" type="button" class="btn btn-primary dropdown-toggle">
 					<span class="glyphicon glyphicon-plus"></span>添加排序
 				</button>
 			</form>
-			
+			<!-- 推荐位 -->
+			<div class="col-md-3 form-inline">
+				<select class="form-control" name="pushselect">
+					<option value=''>请选择推荐位</option>
+					<?php if(is_array($positions)): $i = 0; $__LIST__ = $positions;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$position): $mod = ($i % 2 );++$i;?><option value="<?php echo ($position["id"]); ?>"><?php echo ($position["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+				</select>
+				<button type='button' id="push-button" class="btn btn-primary">推送</button>
+			</div>
+			<!--End推荐位 -->
 			<div class='text-right'>
 				<ul class="pagination">
 					<?php echo ($pagination); ?>
@@ -153,7 +164,7 @@
 			dialog.confirmBack('是否确定删除',changeStatus,[url,data]);
 			
 		});
-		
+		// 文章列表更改状态
 		$('.status').on('click',function(){
 			var $this=$(this);
 			var id = $this.data('id');
@@ -202,6 +213,52 @@
 			},'json');
 		});
 		
+		// 推荐位checkbox全选
+		$("#check_all").on('click',function(){
+			var $item = $('input[name="check_item"]');
+			$item.prop('checked',$(this).prop('checked'));
+		});
+		
+		// 推荐位checkbox item全选
+		$('input[name="check_item"]').on('click',function(){
+			$('input[name="check_item"]').each(function(key,item){
+				var $all = $("#check_all");
+				if(!$(item).is(':checked')){
+					$all.prop("checked",false);
+					return false;
+				}
+				$all.prop("checked",true);
+			});
+		});
+		
+		// 单击推送按钮
+		$("#push-button").on('click',function(){
+			var check_v = $('input[name="check_item"]').map(function(key,item){
+				if($(item).is(":checked")){
+					return $(this).val();	
+				}
+			}).get();
+			var push_id = $('select[name="pushselect"]').val();
+			// 条件判断
+			if(check_v.length==0){
+				dialog.error('请选择文章');
+				return false;
+			}
+			if(!$.isNumeric(push_id)){
+				dialog.error('请选择推荐位');
+				return false;
+			}
+			// ajax 调用
+			var data = {'check_v':check_v,'position_id':push_id};
+			var url = '/admin/content/push';
+			$.post(url,data,function(result){
+				if(result.status==1){
+					dialog.success(result.msg,result['data']['jump_url']);
+				}else{
+					dialog.success(result.msg);
+				}
+			},'json');
+		});
 	});
 })(jQuery);
 </script></div>

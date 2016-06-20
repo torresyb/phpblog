@@ -3,7 +3,7 @@ namespace Admin\Controller;
 
 use Think\Controller;
 
-class ImageController extends Controller
+class ImageController extends CommonController
 {   
     private $uploadObj = null;
     

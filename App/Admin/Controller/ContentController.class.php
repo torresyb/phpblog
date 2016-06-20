@@ -3,7 +3,8 @@ namespace Admin\Controller;
 
 use Think\Controller;
 
-class ContentController extends Controller{
+class ContentController extends CommonController
+{
     /**
      * 文章管理首页
      */
@@ -29,9 +30,12 @@ class ContentController extends Controller{
         $tpage = new \Think\Page($contentcount,$pagesize);
         $pagination = $tpage->show();
         
+        $positions = D("Position")->getAllPositions();
+        
         $this->assign(array('title'=>'文章管理','navname'=>'文章管理'));
         $this->assign('news',$rst);
         $this->assign('menus',$menus);
+        $this->assign('positions',$positions);
         $this->assign('pagination',$pagination);
         $this->display();
     }
@@ -126,6 +130,9 @@ class ContentController extends Controller{
         }
     }
     
+    /**
+     * 文章删除
+     */
     public function delete() {
         if(IS_POST){
             $id = I('id','','int');
@@ -139,5 +146,45 @@ class ContentController extends Controller{
                 }
             }
         }
+    }
+    
+    /**
+     * 推荐位
+     */
+    public function push(){
+        $jumpUrl = $_SERVER['HTTP_REFERER'];
+        $position_id = I('position_id','','int');
+        $news_id = I('check_v','','strip_tags,trim');
+        
+        if(!isset($position_id) || empty($position_id)){
+            show(0,'请选择推荐位');
+        }
+        
+        if(!is_array($news_id) || !(count($news_id)>0)){
+            show(0, '请选择文章');
+        }
+        try {
+            // 根据news_id 查询文章想过信息
+            $news = D('News')->getNewsByNewsIdIn($news_id);
+            if(!$news){
+                show(0,'没有想过文章');
+            }
+            foreach ($news as $new){
+                // 组装  tb_position_content
+                $data = array(
+                    'position_id'=> $position_id,
+                    'title'      => $new['title'],
+                    'thumb'      => $new['thumb'],
+                    'news_id'    => $new['news_id'],
+                    'status'     => $new['status'],
+                    'create_time'=> $new['create_time'],
+                    'update_time'=> $new['update_time']
+                );
+                $position = D('PositionContent')->insert($data);
+            }
+        } catch (Exception $e) {
+            show(0, $e->getMessage());
+        }
+        show(1, '添加推荐位成功',array('jump_url'=>$jumpUrl));
     }
 }
