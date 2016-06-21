@@ -3,7 +3,7 @@ namespace Admin\Controller;
 
 use Think\Controller;
 
-class LoginController extends CommonController
+class LoginController extends Controller
 {
     public function _before_index()
     {

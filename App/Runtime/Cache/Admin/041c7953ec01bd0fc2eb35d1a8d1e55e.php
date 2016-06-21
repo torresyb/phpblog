@@ -59,13 +59,12 @@
 	</button>
 </div>
 <div class="row gb20">
-	<form action="/admin/content/index" method="get">
+	<form action="/admin/positioncontent/index" method="get">
 		<div class="col-md-3">
 			<div class="input-group">
-				<span class="input-group-addon">栏目</span> 
-				<select class="form-control" name="catid">
-					<option value=''>全部分类</option>
-					<?php if(is_array($menus)): $i = 0; $__LIST__ = $menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><option value="<?php echo ($menu["menu_id"]); ?>" <?php if($_GET[catid]== $menu['menu_id']): ?>selected<?php endif; ?> ><?php echo ($menu["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+				<span class="input-group-addon">推荐位</span> 
+				<select class="form-control" name="positionId">
+					<?php if(is_array($positions)): $i = 0; $__LIST__ = $positions;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$position): $mod = ($i % 2 );++$i;?><option value="<?php echo ($position["id"]); ?>" <?php if($positionId == $position['id']): ?>selected<?php endif; ?> ><?php echo ($position["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
 				</select>
 			</div>
 		</div>
@@ -89,12 +88,9 @@
 				<table class="table table-bordered table-hover table">
 					<thead>
 						<tr>
-							<th><input type="checkbox" name="check_all" id="check_all" /></th>
 							<th width="14">排序</th>
 							<th>id</th>
 							<th>标题</th>
-							<th>栏目</th>
-							<th>来源</th>
 							<th>封面图</th>
 							<th>时间</th>
 							<th>状态</th>
@@ -102,19 +98,16 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php if(is_array($news)): foreach($news as $key=>$new): ?><tr>
-							<td><input type="checkbox" name='check_item' value="<?php echo ($new["news_id"]); ?>" /></td>
-							<td><input size=4 type='text' name='listorder[<?php echo ($new["news_id"]); ?>]' value="<?php echo ($new["listorder"]); ?>" /></td>
-							<td><?php echo ($new["news_id"]); ?></td>
-							<td><?php echo ($new["title"]); ?></td>
-							<td><?php echo (getCat($menus,$new["catid"])); ?></td>
-							<td><?php echo (getCopyFrom($new["copyfrom"])); ?></td>
-							<td><img src="<?php echo ($new["thumb"]); ?>" width="48px" alt="" /></td>
-							<td><?php echo (date('Y-m-d H:i:s',$new["create_time"])); ?></td>
-							<td class="status status_<?php echo ($new["news_id"]); ?>" data-id="<?php echo ($new["news_id"]); ?>" data-status=<?php if($new["status"] == 0): ?>"1"<?php else: ?>"0"<?php endif; ?> ><?php echo (getStatus($new["status"])); ?></td>
+						<?php if(is_array($positioncontents)): foreach($positioncontents as $key=>$positioncontent): ?><tr>
+							<td><input size=4 type='text' name='listorder[<?php echo ($positioncontent["id"]); ?>]' value="<?php echo ($positioncontent["listorder"]); ?>" /></td>
+							<td><?php echo ($positioncontent["id"]); ?></td>
+							<td><?php echo ($positioncontent["title"]); ?></td>
+							<td><img src="<?php echo ($positioncontent["thumb"]); ?>" width="48px" alt="" /></td>
+							<td><?php echo (date('Y-m-d H:i:s',$positioncontent["create_time"])); ?></td>
+							<td class="status status_<?php echo ($positioncontent["id"]); ?>" data-id="<?php echo ($positioncontent["id"]); ?>" data-status=<?php if($positioncontent["status"] == 0): ?>"1"<?php else: ?>"0"<?php endif; ?> ><?php echo (getStatus($positioncontent["status"])); ?></td>
 							<td>
-								<a href="/admin/content/add?id=<?php echo ($new["news_id"]); ?>" title="编辑" class="glyphicon glyphicon-edit tp-edit"></a> 
-								<a href="javascript:void(0)" class="tp-delete" data-id="<?php echo ($new["news_id"]); ?>" title="删除"> 
+								<a href="/admin/positioncontent/add?id=<?php echo ($positioncontent["id"]); ?>" title="编辑" class="glyphicon glyphicon-edit tp-edit"></a> 
+								<a href="javascript:void(0)" class="tp-delete" data-id="<?php echo ($positioncontent["id"]); ?>" title="删除"> 
 									<span class="glyphicon glyphicon-remove-circle" ></span>
 								</a>
 							</td>
@@ -126,15 +119,7 @@
 					<span class="glyphicon glyphicon-plus"></span>添加排序
 				</button>
 			</form>
-			<!-- 推荐位 -->
-			<div class="col-md-3 form-inline">
-				<select class="form-control" name="pushselect">
-					<option value=''>请选择推荐位</option>
-					<?php if(is_array($positions)): $i = 0; $__LIST__ = $positions;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$position): $mod = ($i % 2 );++$i;?><option value="<?php echo ($position["id"]); ?>"><?php echo ($position["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-				</select>
-				<button type='button' id="push-button" class="btn btn-primary">推送</button>
-			</div>
-			<!--End推荐位 -->
+			
 			<div class='text-right'>
 				<ul class="pagination">
 					<?php echo ($pagination); ?>
@@ -150,14 +135,14 @@
 		// 添加文章
 		$("#button-add").on('click',function(e){
 			e.preventDefault();
-			location.href="/admin/content/add";
+			location.href="/admin/positioncontent/add";
 		});
 		
 		// 删除文章
 		$('.tp-delete').on('click',function(e){
 			e.preventDefault();
 			var id = $(this).data('id');
-			var url = '/admin/content/delete';
+			var url = '/admin/positioncontent/delete';
 			var data = {}; 
 			data['id'] = id;
 			data['status'] = -1;
@@ -172,7 +157,7 @@
 			var data = {};
 			data['id'] = id;
 			data['status'] = status;
-			var url = '/admin/content/delete';
+			var url = '/admin/positioncontent/delete';
 			
 			dialog.confirmBack('是否确定更新状态',changeStatus,[url,data]);
 		});
@@ -186,15 +171,15 @@
 						var str = data['status']==1?'正常':'关闭';
 						var status = data['status']==1?0:1;
 						$('.status_'+data['id']).text(str).data('status',status);
-						console.log($('.status_'+data['id']).data('status'));
+						/* console.log($('.status_'+data['id']).data('status')); */
 					}else{
-						dialog.success(result.msg,'/admin/content/index');
+						dialog.success(result.msg,'/admin/positioncontent/index');
 					}
 				}else{
 					if(result.data==1){
 						dialog.error(result.msg);
 					}else{
-						dialog.error(result.msg,'/admin/content/index');
+						dialog.error(result.msg,'/admin/positioncontent/index');
 					}
 				}
 			},'json');
@@ -204,61 +189,15 @@
 		$('#button-orderlist').on('click', function(e){
 			e.preventDefault();
 			var str = $("form#listorder").serialize();
-			$.post('/admin/content/listorder',{'data':str},function(result){
+			$.post('/admin/positioncontent/listorder',{'data':str},function(result){
 				if(result.status==1){
-					dialog.success(result.msg,'/admin/content/index');
+					dialog.success(result.msg,'/admin/positioncontent/index');
 				}else{
-					dialog.error(result.msg,'/admin/content/index');
+					dialog.error(result.msg,'/admin/positioncontent/index');
 				}
 			},'json');
 		});
 		
-		// 推荐位checkbox全选
-		$("#check_all").on('click',function(){
-			var $item = $('input[name="check_item"]');
-			$item.prop('checked',$(this).prop('checked'));
-		});
-		
-		// 推荐位checkbox item全选
-		$('input[name="check_item"]').on('click',function(){
-			$('input[name="check_item"]').each(function(key,item){
-				var $all = $("#check_all");
-				if(!$(item).is(':checked')){
-					$all.prop("checked",false);
-					return false;
-				}
-				$all.prop("checked",true);
-			});
-		});
-		
-		// 单击推送按钮
-		$("#push-button").on('click',function(){
-			var check_v = $('input[name="check_item"]').map(function(key,item){
-				if($(item).is(":checked")){
-					return $(this).val();	
-				}
-			}).get();
-			var push_id = $('select[name="pushselect"]').val();
-			// 条件判断
-			if(check_v.length==0){
-				dialog.error('请选择文章');
-				return false;
-			}
-			if(!$.isNumeric(push_id)){
-				dialog.error('请选择推荐位');
-				return false;
-			}
-			// ajax 调用
-			var data = {'check_v':check_v,'position_id':push_id};
-			var url = '/admin/content/push';
-			$.post(url,data,function(result){
-				if(result.status==1){
-					dialog.success(result.msg,result['data']['jump_url']);
-				}else{
-					dialog.success(result.msg);
-				}
-			},'json');
-		});
 	});
 })(jQuery);
 </script></div>

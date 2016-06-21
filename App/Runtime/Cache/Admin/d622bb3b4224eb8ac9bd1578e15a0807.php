@@ -93,7 +93,7 @@ KindEditor.ready(function(K) {
 				<label for="inputname" class="col-sm-2 control-label">缩图:</label>
 				<div class="col-sm-5">
 					<input id="file_upload" name="file_upload" type="file" multiple="true"> 
-					<img <?php if(empty($new.thumb)): ?>style="display: none"<?php endif; ?> id="upload_org_code_img" src="<?php echo ($new["thumb"]); ?>" width="150" height="150"> 
+					<img <?php if(empty($new['thumb'])): ?>style="display: none"<?php endif; ?> id="upload_org_code_img" src="<?php echo ($new["thumb"]); ?>" width="150" height="150"> 
 					<input id="file_upload_image" name="thumb" type="hidden" multiple="true" value="<?php echo ($new["thumb"]); ?>">
 				</div>
 			</div>

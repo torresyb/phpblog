@@ -1,0 +1,164 @@
+<div class="row">
+	<div class="col-lg-12">
+		<ol class="breadcrumb">
+			<li><i class="glyphicon glyphicon-cog"></i> <a
+				href="/admin/admin">{$title}</a></li>
+			<li class="active"><i class="glyphicon glyphicon-calendar"></i> {$navname} </li>
+		</ol>
+	</div>
+</div>
+
+<div class="gb20">
+	<button id="button-add" type="button"
+		class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+		aria-haspopup="true" aria-expanded="false">
+		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加
+	</button>
+</div>
+<div class="row gb20">
+	<form action="/admin/positioncontent/index" method="get">
+		<div class="col-md-3">
+			<div class="input-group">
+				<span class="input-group-addon">推荐位</span> 
+				<select class="form-control" name="positionId">
+					<volist name="positions" id="position">
+						<option value="{$position.id}" <if condition = "$positionId == $position['id']">selected</if> >{$position.name}</option>
+					</volist>
+				</select>
+			</div>
+		</div>
+		
+		<div class="col-md-3">
+			<div class="input-group">
+				<input class="form-control" name="title" type="text" value="{$_GET['title']}" placeholder="文章标题" /> 
+				<span class="input-group-btn">
+					<button id="sub_data" type="submit" class="btn btn-primary">
+						<i class="glyphicon glyphicon-search"></i>
+					</button>
+				</span>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="row">
+	<div class="col-lg-12">
+		<div class="table-responsive">
+			<form id="listorder" class="gb20">
+				<table class="table table-bordered table-hover table">
+					<thead>
+						<tr>
+							<th width="14">排序</th>
+							<th>id</th>
+							<th>标题</th>
+							<th>封面图</th>
+							<th>时间</th>
+							<th>状态</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<Foreach name='positioncontents' item='positioncontent'>
+						<tr>
+							<td><input size=4 type='text' name='listorder[{$positioncontent.id}]' value="{$positioncontent.listorder}" /></td>
+							<td>{$positioncontent.id}</td>
+							<td>{$positioncontent.title}</td>
+							<td><img src="{$positioncontent.thumb}" width="48px" alt="" /></td>
+							<td>{$positioncontent.create_time|date='Y-m-d H:i:s',###}</td>
+							<td class="status status_{$positioncontent.id}" data-id="{$positioncontent.id}" data-status=<if condition="$positioncontent.status eq 0">"1"<else/>"0"</if> >{$positioncontent.status|getStatus}</td>
+							<td>
+								<a href="/admin/positioncontent/add?id={$positioncontent.id}" title="编辑" class="glyphicon glyphicon-edit tp-edit"></a> 
+								<a href="javascript:void(0)" class="tp-delete" data-id="{$positioncontent.id}" title="删除"> 
+									<span class="glyphicon glyphicon-remove-circle" ></span>
+								</a>
+							</td>
+						</tr>
+						</Foreach>
+					</tbody>
+				</table>
+				
+				<button id="button-orderlist" type="button" class="btn btn-primary dropdown-toggle">
+					<span class="glyphicon glyphicon-plus"></span>添加排序
+				</button>
+			</form>
+			
+			<div class='text-right'>
+				<ul class="pagination">
+					{$pagination}
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</div>
+<script>
+(function($){
+	$(function(){
+		// 添加文章
+		$("#button-add").on('click',function(e){
+			e.preventDefault();
+			location.href="/admin/positioncontent/add";
+		});
+		
+		// 删除文章
+		$('.tp-delete').on('click',function(e){
+			e.preventDefault();
+			var id = $(this).data('id');
+			var url = '/admin/positioncontent/delete';
+			var data = {}; 
+			data['id'] = id;
+			data['status'] = -1;
+			dialog.confirmBack('是否确定删除',changeStatus,[url,data]);
+			
+		});
+		// 文章列表更改状态
+		$('.status').on('click',function(){
+			var $this=$(this);
+			var id = $this.data('id');
+			var status = $this.data('status');
+			var data = {};
+			data['id'] = id;
+			data['status'] = status;
+			var url = '/admin/positioncontent/delete';
+			
+			dialog.confirmBack('是否确定更新状态',changeStatus,[url,data]);
+		});
+		
+		// 状态改变
+		function changeStatus(url,data){
+			$.post(url,data,function(result){
+				if(result.status==1){
+					if(result.data==1){
+						dialog.toconfirm(result.msg);
+						var str = data['status']==1?'正常':'关闭';
+						var status = data['status']==1?0:1;
+						$('.status_'+data['id']).text(str).data('status',status);
+						/* console.log($('.status_'+data['id']).data('status')); */
+					}else{
+						dialog.success(result.msg,'/admin/positioncontent/index');
+					}
+				}else{
+					if(result.data==1){
+						dialog.error(result.msg);
+					}else{
+						dialog.error(result.msg,'/admin/positioncontent/index');
+					}
+				}
+			},'json');
+		}
+		
+		// 添加排序
+		$('#button-orderlist').on('click', function(e){
+			e.preventDefault();
+			var str = $("form#listorder").serialize();
+			$.post('/admin/positioncontent/listorder',{'data':str},function(result){
+				if(result.status==1){
+					dialog.success(result.msg,'/admin/positioncontent/index');
+				}else{
+					dialog.error(result.msg,'/admin/positioncontent/index');
+				}
+			},'json');
+		});
+		
+	});
+})(jQuery);
+</script>

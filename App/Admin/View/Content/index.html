@@ -23,7 +23,7 @@
 				<select class="form-control" name="catid">
 					<option value=''>全部分类</option>
 					<volist name="menus" id="menu">
-						<option value="{$menu.menu_id}" <if condition = "$_GET[catid]">selected</if> >{$menu.name}</option>
+						<option value="{$menu.menu_id}" <if condition = "$_GET[catid]== $menu['menu_id']">selected</if> >{$menu.name}</option>
 					</volist>
 				</select>
 			</div>

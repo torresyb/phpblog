@@ -98,8 +98,8 @@ class MenuModel extends Model
     
     /**
      * 菜单排序
-     * @param unknown $id
-     * @param unknown $value
+     * @param number $id
+     * @param number $value
      * @return boolean|number
      */
     public function updateListOrder($id,$value)

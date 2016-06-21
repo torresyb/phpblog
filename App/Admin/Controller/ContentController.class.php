@@ -88,8 +88,8 @@ class ContentController extends CommonController
             $titleColor = C('TITLE_COLOR');
             $copyfrom = C('COPY_FROM');
             
-            $new = null;
-            $content= null;
+            $new = NULL;
+            $content= NULL;
             $navname = '文章管理';
             if(!empty($id)){
                 $new = D('News')->getContent($id);
@@ -180,7 +180,7 @@ class ContentController extends CommonController
                     'create_time'=> $new['create_time'],
                     'update_time'=> $new['update_time']
                 );
-                $position = D('PositionContent')->insert($data);
+                $position = D('Positioncontent')->insert($data);
             }
         } catch (Exception $e) {
             show(0, $e->getMessage());
