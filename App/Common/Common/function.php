@@ -134,3 +134,11 @@ function getStatus($id){
             break;
     }
 }
+
+function getRightUrl($id,$url){
+    if($url){
+        return $url;
+    }else{
+        return "/admin/detail?id=".$id;   
+    }
+}

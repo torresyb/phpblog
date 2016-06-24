@@ -1,0 +1,752 @@
+[ 2016-06-22T14:33:37+08:00 ] 127.0.0.1 /admin/positioncontent/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tp_position` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `tp_position` WHERE `status` = 1  [ RunTime:0.0000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\xampp\htdocs\thinkphp\App\Admin\Controller\PositioncontentController.class.php 第 91 行.
+NOTIC: [8] Undefined index: id E:\xampp\htdocs\thinkphp\App\Admin\Controller\PositioncontentController.class.php 第 91 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\79c7acd6949ac8435f996e3ca337aeb7.php 第 64 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\79c7acd6949ac8435f996e3ca337aeb7.php 第 73 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\79c7acd6949ac8435f996e3ca337aeb7.php 第 73 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\79c7acd6949ac8435f996e3ca337aeb7.php 第 83 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\79c7acd6949ac8435f996e3ca337aeb7.php 第 84 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\79c7acd6949ac8435f996e3ca337aeb7.php 第 92 行.
+NOTIC: [8] Undefined index: id E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\79c7acd6949ac8435f996e3ca337aeb7.php 第 99 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\79c7acd6949ac8435f996e3ca337aeb7.php 第 100 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\79c7acd6949ac8435f996e3ca337aeb7.php 第 107 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\79c7acd6949ac8435f996e3ca337aeb7.php 第 107 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\79c7acd6949ac8435f996e3ca337aeb7.php 第 108 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\79c7acd6949ac8435f996e3ca337aeb7.php 第 115 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-06-22T14:33:38+08:00 ] 127.0.0.1 /admin/positioncontent/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `tp_position` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_position` WHERE `status` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tp_position_content` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_position_content` WHERE `position_id` = 1 AND `status` <> -1 ORDER BY listorder desc,id desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_position_content` WHERE `position_id` = 1 AND `status` <> -1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: title E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\041c7953ec01bd0fc2eb35d1a8d1e55e.php 第 74 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T14:33:40+08:00 ] 127.0.0.1 /admin/menu/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 ORDER BY listorder desc, menu_id desc LIMIT 0,3   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_menu` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: type E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\5a1d71dcf039f1b3725a8d8d96ae9d91.php 第 64 行.
+NOTIC: [8] Undefined variable: type E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\5a1d71dcf039f1b3725a8d8d96ae9d91.php 第 65 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T14:33:44+08:00 ] 127.0.0.1 /admin/menu/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: id E:\xampp\htdocs\thinkphp\App\Admin\Controller\MenuController.class.php 第 82 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: menu E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\707e02f4b161a6e961ce630026eeef8b.php 第 62 行.
+NOTIC: [8] Undefined variable: menus E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\707e02f4b161a6e961ce630026eeef8b.php 第 70 行.
+NOTIC: [8] Undefined variable: menu E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\707e02f4b161a6e961ce630026eeef8b.php 第 77 行.
+NOTIC: [8] Undefined variable: menu E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\707e02f4b161a6e961ce630026eeef8b.php 第 77 行.
+NOTIC: [8] Undefined variable: menu E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\707e02f4b161a6e961ce630026eeef8b.php 第 78 行.
+NOTIC: [8] Undefined variable: menu E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\707e02f4b161a6e961ce630026eeef8b.php 第 85 行.
+NOTIC: [8] Undefined variable: menu E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\707e02f4b161a6e961ce630026eeef8b.php 第 91 行.
+NOTIC: [8] Undefined variable: menu E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\707e02f4b161a6e961ce630026eeef8b.php 第 98 行.
+NOTIC: [8] Undefined variable: menu E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\707e02f4b161a6e961ce630026eeef8b.php 第 113 行.
+NOTIC: [8] Undefined variable: menu E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\707e02f4b161a6e961ce630026eeef8b.php 第 113 行.
+NOTIC: [8] Undefined variable: menu E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\707e02f4b161a6e961ce630026eeef8b.php 第 114 行.
+NOTIC: [8] Undefined variable: menu E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\707e02f4b161a6e961ce630026eeef8b.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-06-22T14:34:12+08:00 ] 127.0.0.1 /admin/menu/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: INSERT INTO `tp_menu` (`name`,`type`,`m`,`c`,`f`,`status`,`menu_id`) VALUES ('基本管理','1','admin','basic','index','1','0') [ RunTime:0.0000s ]
+
+[ 2016-06-22T14:34:13+08:00 ] 127.0.0.1 /admin/menu/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 ORDER BY listorder desc, menu_id desc LIMIT 0,3   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_menu` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: type E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\5a1d71dcf039f1b3725a8d8d96ae9d91.php 第 64 行.
+NOTIC: [8] Undefined variable: type E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\5a1d71dcf039f1b3725a8d8d96ae9d91.php 第 65 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T14:34:23+08:00 ] 127.0.0.1 /index.php/Admin/Menu/index/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 ORDER BY listorder desc, menu_id desc LIMIT 6,3   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_menu` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: type E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\5a1d71dcf039f1b3725a8d8d96ae9d91.php 第 64 行.
+NOTIC: [8] Undefined variable: type E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\5a1d71dcf039f1b3725a8d8d96ae9d91.php 第 65 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T14:34:26+08:00 ] 127.0.0.1 /index.php/Admin/Menu/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 ORDER BY listorder desc, menu_id desc LIMIT 3,3   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_menu` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: type E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\5a1d71dcf039f1b3725a8d8d96ae9d91.php 第 64 行.
+NOTIC: [8] Undefined variable: type E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\5a1d71dcf039f1b3725a8d8d96ae9d91.php 第 65 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T14:34:32+08:00 ] 127.0.0.1 /admin/menu/orderlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: UPDATE `tp_menu` SET `listorder`='2' WHERE ( menu_id=18 ) [ RunTime:0.0000s ]
+SQL: UPDATE `tp_menu` SET `listorder`='1' WHERE ( menu_id=19 ) [ RunTime:0.0000s ]
+SQL: UPDATE `tp_menu` SET `listorder`='6' WHERE ( menu_id=23 ) [ RunTime:0.0000s ]
+
+[ 2016-06-22T14:34:33+08:00 ] 127.0.0.1 /admin/menu/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 ORDER BY listorder desc, menu_id desc LIMIT 0,3   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_menu` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: type E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\5a1d71dcf039f1b3725a8d8d96ae9d91.php 第 64 行.
+NOTIC: [8] Undefined variable: type E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\5a1d71dcf039f1b3725a8d8d96ae9d91.php 第 65 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T14:34:35+08:00 ] 127.0.0.1 /admin/basic/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: title E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 5 行.
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0180s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: title E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 48 行.
+NOTIC: [8] Undefined variable: navname E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 49 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 62 行.
+NOTIC: [8] Undefined variable: positions E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 71 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 81 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 82 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 90 行.
+NOTIC: [8] Undefined index: id E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 97 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 98 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 105 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 105 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 106 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 113 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-22T14:35:44+08:00 ] 127.0.0.1 /admin/basic/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 62 行.
+NOTIC: [8] Undefined variable: positions E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 71 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 81 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 82 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 90 行.
+NOTIC: [8] Undefined index: id E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 97 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 98 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 105 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 105 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 106 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 113 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-22T14:38:31+08:00 ] 127.0.0.1 /admin/basic/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0180s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 62 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 70 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 77 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 83 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-22T15:05:20+08:00 ] 127.0.0.1 /admin/positioncontent/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tp_position` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `tp_position` WHERE `status` = 1  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: positionId E:\xampp\htdocs\thinkphp\App\Admin\Controller\PositioncontentController.class.php 第 59 行.
+NOTIC: [8] Undefined variable: thumb E:\xampp\htdocs\thinkphp\App\Admin\Controller\PositioncontentController.class.php 第 60 行.
+NOTIC: [8] Undefined variable: url E:\xampp\htdocs\thinkphp\App\Admin\Controller\PositioncontentController.class.php 第 61 行.
+NOTIC: [8] Undefined variable: news_id E:\xampp\htdocs\thinkphp\App\Admin\Controller\PositioncontentController.class.php 第 62 行.
+NOTIC: [8] Undefined variable: status E:\xampp\htdocs\thinkphp\App\Admin\Controller\PositioncontentController.class.php 第 64 行.
+
+[ 2016-06-22T15:05:40+08:00 ] 127.0.0.1 /admin/basic/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 62 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 70 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 77 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 83 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T15:05:55+08:00 ] 127.0.0.1 /admin/basic/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 62 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 70 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 77 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 83 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-22T15:06:11+08:00 ] 127.0.0.1 /admin/basic/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-22T15:33:48+08:00 ] 127.0.0.1 /admin/basic/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) E:\xampp\htdocs\thinkphp\App\Admin\Model\BasicModel.class.php 第 7 行.
+ERR: 1146:Table 'tp.tp_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `tp_basic`
+ERR: 1146:Table 'tp.tp_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `tp_basic`
+
+[ 2016-06-22T15:35:53+08:00 ] 127.0.0.1 /admin/basic/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-22T15:36:02+08:00 ] 127.0.0.1 /admin/basic/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-06-22T15:36:43+08:00 ] 127.0.0.1 /admin/basic/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T15:39:28+08:00 ] 127.0.0.1 /admin/basic/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) E:\xampp\htdocs\thinkphp\App\Admin\Model\BasicModel.class.php 第 7 行.
+ERR: 1146:Table 'tp.tp_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `tp_basic`
+ERR: 1146:Table 'tp.tp_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `tp_basic`
+
+[ 2016-06-22T15:42:34+08:00 ] 127.0.0.1 /admin/basic/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) E:\xampp\htdocs\thinkphp\App\Admin\Model\BasicModel.class.php 第 7 行.
+ERR: 1146:Table 'tp.tp_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `tp_basic`
+ERR: 1146:Table 'tp.tp_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `tp_basic`
+
+[ 2016-06-22T15:42:50+08:00 ] 127.0.0.1 /admin/basic/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 62 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 70 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 77 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 83 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T15:42:53+08:00 ] 127.0.0.1 /admin/basic/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T15:43:06+08:00 ] 127.0.0.1 /admin/basic/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [2048] Declaration of Admin\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) E:\xampp\htdocs\thinkphp\App\Admin\Model\BasicModel.class.php 第 7 行.
+ERR: 1146:Table 'tp.tp_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `tp_basic`
+ERR: 1146:Table 'tp.tp_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `tp_basic`
+
+[ 2016-06-22T15:48:50+08:00 ] 127.0.0.1 /admin/basic/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 62 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 70 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 77 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 83 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T15:48:54+08:00 ] 127.0.0.1 /admin/basic/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-22T15:49:13+08:00 ] 127.0.0.1 /admin/basic/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Admin\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) E:\xampp\htdocs\thinkphp\App\Admin\Model\BasicModel.class.php 第 7 行.
+ERR: 1146:Table 'tp.tp_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `tp_basic`
+ERR: 1146:Table 'tp.tp_basic' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `tp_basic`
+
+[ 2016-06-22T15:49:35+08:00 ] 127.0.0.1 /admin/basic/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-22T15:49:36+08:00 ] 127.0.0.1 /admin/basic/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 62 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 70 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 77 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 83 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T15:51:03+08:00 ] 127.0.0.1 /admin/basic/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 62 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 70 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 77 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 83 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T15:51:06+08:00 ] 127.0.0.1 /admin/basic/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 62 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 70 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 77 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 83 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T15:51:10+08:00 ] 127.0.0.1 /admin/basic/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 62 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 70 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 77 行.
+NOTIC: [8] Undefined variable: positioncontent E:\xampp\htdocs\thinkphp\App\Runtime\Cache\Admin\564fdc2ca5ea06d005b34eefd2ec62b3.php 第 83 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T15:51:32+08:00 ] 127.0.0.1 /admin/basic/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-22T15:52:47+08:00 ] 127.0.0.1 /admin/basic/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0010s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T15:52:54+08:00 ] 127.0.0.1 /admin/basic/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-22T15:52:55+08:00 ] 127.0.0.1 /admin/basic/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tp_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `tp_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder asc,menu_id desc  [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

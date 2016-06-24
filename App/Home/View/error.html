@@ -1,0 +1,17 @@
+<div class="container">
+	<h1 class="text-center bg-danger" style="padding:20px 0">{$message}</h1>
+	<div id="error" class="text-center"><span>3</span>s后调整</div>
+</div>
+<script>
+$(function(){
+	var time = 3;
+	var Timer = setInterval(function(){
+		--time;
+		if(time==0){
+			location.href="/";
+			clearInterval(Timer);
+		}
+		$("#error span").html(time);
+	},1000);
+});
+</script>

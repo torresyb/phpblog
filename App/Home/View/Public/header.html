@@ -1,0 +1,20 @@
+<?php 
+	$basic = new \Admin\Model\BasicModel();
+	$config = $basic->show();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>{$config.title}</title>
+<meta name="keywords" content="{$config.keyword}"/>
+<meta name="description" content="{$config.description}"/>
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="__PUBLIC__/css/home/main.css">
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/dialog.js"></script>
+</head>
+<body>

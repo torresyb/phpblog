@@ -45,7 +45,7 @@ class NewsModel extends Model
     public function newsupdate($id,$data=array())
     {
         if(!is_array($data) || !$data || !$id || !is_numeric($id)){
-            return 0;
+            return false;
         }
         $data['update_time'] = time();
         $data['count'] = 0;
@@ -61,15 +61,30 @@ class NewsModel extends Model
         }
     }
     
+    public function newsUpdateCount($id)
+    {
+        if(!$id || !is_numeric($id)){
+            throw_exception("ID 不合法");
+        }
+        $rst = $this->_db->where("news_id=".$id)->setInc('count');
+        return $rst;
+    }
+    
     /**
      * 获取文章
      * @return array 
      */
     public function getContents($data,$page,$pagesize=2) 
     {
-        $data['status'] = array('neq',-1);
+        $data['status'] = $data['status']?$data['status']:array('neq',-1);
         $offset = ($page-1)*$pagesize;
         $rst = $this->_db->where($data)->order('listorder desc,news_id desc')->limit($offset,$pagesize)->select();
+        return $rst;
+    }
+    
+    public function getRankContents($num=3)
+    {
+        $rst = $this->_db->where(array('status'=>1))->order('count desc,news_id desc')->limit($num)->select();
         return $rst;
     }
     
@@ -134,6 +149,11 @@ class NewsModel extends Model
     }
     
     
+    /**
+     * 多选news_id
+     * @param int $news_id
+     * @return object
+     */
     public function getNewsByNewsIdIn($news_id=array())
     {
         if(is_array($news_id)){

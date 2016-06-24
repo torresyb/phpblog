@@ -1,0 +1,21 @@
+<div class="news-list">
+	<volist name="result[news]" id="new">
+   <dl>
+     <dt><a href="/home/detail?id={$new.news_id}" target="_blank">{$new.title}</a></dt>
+     <dd class="news-img">
+       <a href="#" target="_blank"><img src="{$new.thumb}" alt=""></a>
+     </dd>
+     <dd class="news-intro">
+      	 {$new.description}
+     </dd>
+     <dd class="news-info">
+      	 {$new.keywords} <span>{$new['create_time']|date='Y-m-d H:i:s',###}</span> 阅读(<i news-id="{$new['news_id']}" class="news_count node-{$new['news_id']}">{$new['count']}</i>)
+     </dd>
+   </dl>
+  </volist>
+</div>
+<div class='text-center'>
+	<ul class="pagination">
+		{$result.pagenation}
+	</ul>
+</div>

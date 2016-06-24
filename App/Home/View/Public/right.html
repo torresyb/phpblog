@@ -1,0 +1,27 @@
+<div class="right-title">
+        <h3>文章排行</h3>
+        <span>TOP ARTICLES</span>
+      </div>
+      <div class="right-content">
+        <ul>
+        	<volist name="result.rankNews" id="rankNew" key="key">
+          <li class="num{$key} curr">
+            <a href="/admin/detail?id={$rankNew.news_id}">{$rankNew.title}</a>
+            <if condition="$key eq 1">
+            <div class="intro">
+              {$rankNew.description}
+            </div>
+            </if>
+          </li>
+          </volist>
+        </ul>
+      </div>
+      <foreach name="result['rightPicNews']" item="rightPicNew">
+<div class="right-hot">
+	<a href="{$rightPicNew['url']|getRightUrl=$rightPicNew['news_id'],###}"><img src="{$rightPicNew['thumb']}" alt="{$rightPicNew['title']}" title="{$rightPicNew['title']}"></a>
+</div>
+</foreach>
+
+
+
+        

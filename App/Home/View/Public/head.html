@@ -1,0 +1,21 @@
+<?php
+	$menu = new \Admin\Model\MenuModel();
+	$navs = $menu->getBarMenus();
+?>
+<header id="header">
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="/">
+          <img src="/Public/images/logo.png" alt="">
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="/" <if condition="$_GET['id'] eq null">class="curr"</if> >首页</a></li>
+        <foreach name="navs" item="nav">
+        <li><a href="/home/cat?id={$nav['menu_id']}" <if condition="$nav['menu_id'] eq $_GET['id']">class="curr"</if> >{$nav['name']}</a></li>
+        </foreach>
+      </ul>
+    </div>
+  </div>
+</header>

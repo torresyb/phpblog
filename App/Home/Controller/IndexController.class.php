@@ -1,56 +1,37 @@
 <?php
 namespace Home\Controller;
+
 use Think\Controller;
-class IndexController extends Controller {
+
+class IndexController extends CommonController {
     public function index(){
+        layout('layoutindex');
+        try {
+            $topPicNew = $this->getTopPic(1);
+            $rightPicNews = $this->getRightPics(2);
+            
+            //获取文章
+            $page = I('p',1,'int');
+            $pagesize=2;
+            $data = array('status'=>1,'thumb'=>array('neq',''));
+            // 获取所有文字
+            $news = $this->getContents($data, $page,$pagesize);
+            
+            // 获取分页
+            $pagenation = $this->getPage($data,$pagesize);
+            
+            // 获取right 文章排行
+            $rankNews= $this->getRankContents(3);
+        } catch (Exception $e) {
+            return show(0, $e->getMessage());
+        }
+        $this->assign("result",array(
+            'topPicNew'=>$topPicNew[0],
+            'rightPicNews'=>$rightPicNews,
+            'news'=>$news,
+            'rankNews'=>$rankNews,
+            'pagenation'=>$pagenation
+        ));
         $this->display();
-    }
-    
-    // 加入数据
-    public function insert(){
-        $m = D('Form');
-        
-        if($m->create()){
-            $rst = $m->add();
-            if($rst){
-                $this->success('数据添加成功');
-            }else{
-                $this->error('数据添加失败');
-            }
-        }else{
-            $this->error($m->getError());
-        }
-    }
-    
-    // 读取数据
-    public function read($id = 0)
-    {
-        $m = M('Form');
-        
-        $rst = $m->find($id);
-        
-        if($rst){
-            $this->assign('result',$rst);
-        }else {
-            $this->error('读取数据失败');   
-        }
-        
-        $this->display('index');
-    }
-    
-    // 更新数据
-    public function update()
-    {
-        $m = D('Form');
-        if($m->create()){
-            $rst = $m->save();
-            if($rst){
-                $this->success('更新数据成功');
-            }else{
-                $this->error('更新数据失败');
-            }
-        }else {
-            $this->error($m->getError());
-        }
     }
 }

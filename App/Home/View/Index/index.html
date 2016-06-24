@@ -1,15 +1,57 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<title>thinkphp learn</title>
-</head>
-<body>
-	<form action="__URL__/update" method="post">
-		标题：<INPUT type="text" name="title" value={$result.title}><br/>
-		内容：<TEXTAREA name="content" rows="5" cols="45">{$result.content}</TEXTAREA><br/>
-		<input type="hidden" name='id' value={$result.id} />
-		<INPUT type="submit" value="提交">
-	</form>
-</body>
-</html>
+<div class="hero" style="background-image: url({$result.topPicNew.thumb})">
+	<div class="overlay">
+		<!-- <h1><a href="{$result.topPicNew.url}" >{$result.topPicNew.title}</a></h1> -->
+	</div>
+</div>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-9">
+        <div class="news-list">
+        	<volist name="result[news]" id="new">
+	          <dl>
+	            <dt><a href="/home/detail?id={$new.news_id}" target="_blank">{$new.title}</a></dt>
+	            <dd class="news-img">
+	              <a href="#" target="_blank"><img src="{$new.thumb}" alt=""></a>
+	            </dd>
+	            <dd class="news-intro">
+	             	 {$new.description}
+	            </dd>
+	            <dd class="news-info">
+	             	 {$new.keywords} <span>{$new['create_time']|date='Y-m-d H:i:s',###}</span> 阅读(<i news-id="{$new['news_id']}" class="news_count node-{$new['news_id']}">{$new['count']}</i>)
+	            </dd>
+	          </dl>
+          </volist>
+        </div>
+        <div class='text-center'>
+				<ul class="pagination">
+					{$result.pagenation}
+				</ul>
+			</div>
+      </div>
+      <div class="col-sm-3 col-md-3">
+        <div class="right-title">
+          <h3>文章排行</h3>
+          <span>TOP ARTICLES</span>
+        </div>
+        <div class="right-content">
+          <ul>
+          	<volist name="result.rankNews" id="rankNew" key="key">
+            <li class="num{$key} curr">
+              <a href="/admin/detail?id={$rankNew.news_id}">{$rankNew.title}</a>
+              <if condition="$key eq 1">
+              <div class="intro">
+                {$rankNew.description}
+              </div>
+              </if>
+            </li>
+            </volist>
+          </ul>
+        </div>
+        <foreach name="result['rightPicNews']" item="rightPicNew">
+		<div class="right-hot">
+			<a href="{$rightPicNew['url']|getRightUrl=$rightPicNew['news_id'],###}"><img src="{$rightPicNew['thumb']}" alt="{$rightPicNew['title']}" title="{$rightPicNew['title']}"></a>
+		</div>
+		</foreach>
+      </div>
+    </div>
+  </div>

@@ -131,7 +131,7 @@ class MenuModel extends Model
     public function getBarMenus()
     {
         $data = array(
-            'status'=> array('neq',-1),
+            'status'=> 1,
             'type'=> 0
         );
     
