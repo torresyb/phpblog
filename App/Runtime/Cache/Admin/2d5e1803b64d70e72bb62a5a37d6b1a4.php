@@ -51,39 +51,17 @@
 	</div>
 </div>
 <ul class="nav nav-pills gb20">
-	  <li role="presentation" class="active"><a href="/">基本配置</a></li>
-	  <li role="presentation"><a href="/admin/basic/cache">更新缓存</a></li>
+	  <li role="presentation"><a href="/">基本配置</a></li>
+	  <li role="presentation" class="active"><a href="/admin/basic/cache">更新缓存</a></li>
 </ul>
 <div class="row">
 	<div class="col-lg-6">
 
 		<form class="form-horizontal" id="myform">
 			<div class="form-group">
-				<label for="inputname" class="col-sm-2 control-label">站点标题:</label>
-				<div class="col-sm-5">
-					<input type="text" name="title" class="form-control" id="title"
-						placeholder="请填写站点标题" value="<?php echo ($basic["title"]); ?>">
-				</div>
-			</div>
-			
-			<div class="form-group">
-				<label for="inputname" class="col-sm-2 control-label">站点关键词:</label>
-				<div class="col-sm-5">
-					<input type="text" name="keyword" class="form-control"
-						id="keyword" placeholder="请填写关键词" value="<?php echo ($basic["keyword"]); ?>">
-				</div>
-			</div>
-			
-			<div class="form-group">
-				<label for="inputname" class="col-sm-2 control-label">站点描述:</label>
-				<div class="col-sm-5">
-					<input type="text" name="description" class="form-control" id="description" placeholder="请填写站点描述" value="<?php echo ($basic["description"]); ?>">
-				</div>
-			</div>
-			
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<button type="button" class="btn btn-default" id="button-submit">提交</button>
+				<label for="inputname" class="col-sm-3 control-label">首页缓存更新:</label>
+				<div class="col-sm-4">
+					<button type="button" class="btn btn-default" id="button-submit">确定更新</button>
 				</div>
 			</div>
 		</form>
@@ -97,10 +75,9 @@
 	(function($){
 		$("#button-submit").on('click',function(e){
 			e.preventDefault();
-			var data = $("form#myform").serialize();
-			$.post("/admin/basic/add",{'data':data},function(result){
+			$.get("/home/index/build_html",function(result){
 				if(result.status==1){
-					dialog.success(result.msg,"/admin/basic/index");
+					dialog.success(result.msg,"/admin/basic/cache");
 				}else{
 					dialog.error(result.msg);
 				}

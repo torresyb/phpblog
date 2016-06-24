@@ -19,6 +19,13 @@ define('APP_DEBUG',True);
 
 define('HTTP_PATH', './');
 
+// crontab 判断
+define("APP_CRONTAB", 1);
+
+if(!$argv || count($argv)<4){
+    die('params_is_error');
+}
+
 // 定义应用目录
 define('APP_PATH','./App/');
 

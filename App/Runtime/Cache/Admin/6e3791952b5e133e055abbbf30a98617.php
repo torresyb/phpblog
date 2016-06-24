@@ -117,6 +117,7 @@
 								<a href="javascript:void(0)" class="tp-delete" data-id="<?php echo ($new["news_id"]); ?>" title="删除"> 
 									<span class="glyphicon glyphicon-remove-circle" ></span>
 								</a>
+								<a href="/home/detail/view?id=<?php echo ($new["news_id"]); ?>" title="预览" class="glyphicon glyphicon-eye-open"></a> 
 							</td>
 						</tr><?php endforeach; endif; ?>
 					</tbody>

@@ -34,6 +34,14 @@ class DetailController extends CommonController
             'rightPicNews'=> $rightPicNews,
             'rankNews'    => $rankNews
         ));
-        $this->display();
+        $this->display('Detail/index');
+    }
+    
+    public function view($id) {
+        if(!getLoginUserName()){
+            $this->error("你没有权限访问该页面");
+        }
+        
+        $this->index($id);
     }
 }

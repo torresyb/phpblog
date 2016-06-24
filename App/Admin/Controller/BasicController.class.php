@@ -43,4 +43,10 @@ class BasicController extends CommonController
             show(0, '没有提交的数据');
         }
     }
+    
+    public function cache() {
+        $this->assign('title','缓存管理');
+        $this->assign('navname','缓存管理');
+        $this->display();
+    }
 }

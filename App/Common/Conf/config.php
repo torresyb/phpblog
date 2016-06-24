@@ -5,4 +5,5 @@ return array(
     'LAYOUT_NAME'=>'layout',
     'LOAD_EXT_CONFIG'=>'db',
     'MD5_PRE'=>'tp_torres',
+    'HTML_FILE_SUFFIX'=>'.html',
 );

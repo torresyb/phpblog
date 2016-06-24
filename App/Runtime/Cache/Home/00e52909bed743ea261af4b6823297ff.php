@@ -53,7 +53,7 @@
 	             	 <?php echo ($new["description"]); ?>
 	            </dd>
 	            <dd class="news-info">
-	             	 <?php echo ($new["keywords"]); ?> <span><?php echo (date('Y-m-d H:i:s',$new['create_time'])); ?></span> 阅读(<i news-id="<?php echo ($new['news_id']); ?>" class="news_count node-<?php echo ($new['news_id']); ?>"><?php echo ($new['count']); ?></i>)
+	             	 <?php echo ($new["keywords"]); ?> <span><?php echo (date('Y-m-d H:i:s',$new['create_time'])); ?></span> 阅读(<i data-id="<?php echo ($new['news_id']); ?>" class="news_count view-<?php echo ($new['news_id']); ?>"><?php echo ($new['count']); ?></i>)
 	            </dd>
 	          </dl><?php endforeach; endif; else: echo "" ;endif; ?>
         </div>
@@ -84,7 +84,7 @@
       </div>
     </div>
   </div>
-
+<script type="text/javascript" src="/Public/js/count.js"></script>
 </div>
 <!-- 底部 -->
 
