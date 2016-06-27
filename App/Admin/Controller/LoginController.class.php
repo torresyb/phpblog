@@ -30,21 +30,30 @@ class LoginController extends Controller
         $password = I('password','','strip_tags,trim');
         
         if($username!="" && $password!=""){
-            // Model 方法
-            $rst = D('Admin')->getAdminByUsername($username);
-            
-            if($rst){
-                if($rst['password'] == getMd5Password($password)){
-                    session('adminInfo',$rst);
-                    show(1,'登陆成功');
-                }else{
-                    show(0,'密码不正确');
-                }
+            try {
+                // Model 方法
+                $rst = D('Admin')->getAdminByUsername($username);
                 
-            }else {
-                show(0,'不存在该用户');
+                if($rst && $rst['status']==1){
+                    if($rst['password'] == getMd5Password($password)){
+                        // session全局存储
+                        session('adminInfo',$rst);
+                        // mysql存储登陆信息
+                        $data['lastlogintime'] = time();
+                        $data['lastloginip'] = get_client_ip();
+                        D("Admin")->update($rst['admin_id'],$data);
+                        //请求返回信息
+                        show(1,'登陆成功');
+                    }else{
+                        show(0,'密码不正确');
+                    }
+                    
+                }else {
+                    show(0,'不存在该用户');
+                }
+            } catch (Exception $e) {
+                show(0, $e->getMessage());
             }
-            
         }else {
             show(0, '填写信息有误');
         }
@@ -58,9 +67,16 @@ class LoginController extends Controller
         
         $data['username'] = I('username','','strip_tags,trim');
         $data['password'] = getMd5Password(I('password','','strip_tags,trim'));
-
-        if($data['username']!="" && $data['username']!=""){
+        
+        $rst = D('Admin')->getAdminByUsername($data['username']);
+        if($rst){
+            show(0, '该用户已存在');
+        }
+        
+        if($data['username']!="" && $data['password']!=""){
             $data['status'] = '1';
+            $data['lastlogintime'] = time();
+            $data['lastloginip'] = get_client_ip();
             $reslut = M('Admin')->add($data);
             if($reslut){
                 show(1, '注册成功');

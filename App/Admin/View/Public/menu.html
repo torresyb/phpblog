@@ -1,8 +1,15 @@
 <?php 
 	$navs = D('Menu')->getAdminMenus();
+	$username = getLoginUserName();
+	foreach($navs as $k=>$v){
+		if($v['c']=='admin' && $username !='admin'){
+			unset($navs[$k]);
+		}
+	}
 ?>
 
 <ul class="nav nav-pills nav-stacked">
+  <li <if condition="$Think.CONTROLLER_NAME=='Index'"> class="active"</if> ><a href="/admin/index/index">首页</a></li>
   <volist name="navs" id="nav">
   	<li {$nav.c|getActive}><a href="/{$nav.m}/{$nav.c}/{$nav.f}">{$nav.name}</a></li>
   </volist>

@@ -44,3 +44,38 @@ html,body{
 .gb20{
 	margin-bottom:20px;
 }
+
+.panel-green{
+	border-color: green;
+}
+.panel-green>.panel-heading{
+	background-color:green;
+	color:#fff;
+	border-color: green;
+}
+
+.panel-yellow{
+	border-color: #A5A503;
+}
+.panel-yellow>.panel-heading{
+	background-color:#A5A503;
+	color:#fff;
+	border-color: #A5A503;
+}
+
+.panel-red{
+	border-color: red;
+}
+.panel-red>.panel-heading{
+	background-color:red;
+	color:#fff;
+	border-color: red;
+}
+.panel-heading .number{
+	font-size:28px;
+	font-weight:bold;
+}
+.panel-heading i.glyphicon{
+	font-size:40px;
+	margin-top:10px;
+}

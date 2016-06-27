@@ -165,4 +165,13 @@ class NewsModel extends Model
         return  false;
     }
     
+    /**
+     * 返回最大阅读数的文章
+     * @return array
+     */
+    public function maxcountnew() {
+        $data=array("status"=>1);
+        $rst = $this->_db->where($data)->order("count desc")->limit(1)->select();
+        return $rst;
+    }
 }

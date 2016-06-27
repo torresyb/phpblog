@@ -1,0 +1,81 @@
+<div class="row">
+	<div class="col-lg-12">
+		<ol class="breadcrumb">
+			<li><i class="glyphicon glyphicon-cog"></i> <a
+				href="/admin/admin">用户管理</a></li>
+			<li class="active"><i class="glyphicon glyphicon-calendar"></i>{$navname}</li>
+		</ol>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-6">
+
+		<form class="form-horizontal" id="myForm">
+                    <div class="form-group">
+                        <label for="inputname" class="col-sm-2 control-label">用户名:</label>
+                        <div class="col-sm-5">
+                            <input type="text" name="username" class="form-control" id="inputname" placeholder="请填写用户名" value="{$admin.username}">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">密码:</label>
+                        <div class="col-sm-5">
+                            <input type="text" name="password" class="form-control" id="inputname" placeholder="请填写密码"/ value="{$admin.password}"> 
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">真实姓名:</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="realname" id="inputPassword3" placeholder="请填写真实姓名" value="{$admin.realname}">
+                        </div>
+                    </div>
+					<div class="form-group">
+                        <label for="inputname" class="col-sm-2 control-label">邮箱:</label>
+                        <div class="col-sm-5">
+                            <input type="text" name="email" class="form-control" id="email" placeholder="请填写用户名" value="{$admin.email}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                        	<input type="hidden" name="id" value="{$admin.admin_id}"/>
+                            <button type="button" class="btn btn-default" id="button-submit">提交</button>
+                        </div>
+                    </div>
+                </form>
+
+
+	</div>
+
+</div>
+<script>
+(function($){
+	$(function(){
+		$("#button-submit").on('click',formSubmit);
+		
+		function formSubmit(){
+			var _data = $("form#myForm").serialize();
+			
+			$.ajax({
+				url:'/admin/admin/add',
+				type:'post',
+				dataType: 'json',
+				async: false,
+				data: {'data':_data},
+				success: function(result){
+					if(result.status==1){
+						dialog.success(result.msg,'/admin/admin/index');
+					}else{
+						dialog.error(result.msg);
+					}
+				},
+				errer: function(){
+					dialog.error('提交數據失敗');
+				}
+			});
+		}
+	});
+})(jQuery);
+</script>

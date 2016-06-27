@@ -23,7 +23,7 @@
 		        <li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo ($_SESSION['adminInfo']['username']); ?><span class="caret"></span></a>
 		          <ul class="dropdown-menu">
-		            <li><a href="#">个人中心</a></li>
+		            <li><a href="/admin/admin/add?id=<?php echo ($_SESSION['adminInfo']['admin_id']); ?>">个人中心</a></li>
 		            <li><a href="/admin/login/loginout">退出</a></li>
 		          </ul>
 		        </li>
@@ -35,9 +35,10 @@
 <div id="content" class="container-fluid">
 	<div class="row">
 		<div id="menu" class="col-sm-2">
-			<?php  $navs = D('Menu')->getAdminMenus(); ?>
+			<?php  $navs = D('Menu')->getAdminMenus(); $username = getLoginUserName(); foreach($navs as $k=>$v){ if($v['c']=='admin' && $username !='admin'){ unset($navs[$k]); } } ?>
 
 <ul class="nav nav-pills nav-stacked">
+  <li <?php if($Think.CONTROLLER_NAME=='Index'): ?>class="active"<?php endif; ?> ><a href="/admin/index/index">首页</a></li>
   <?php if(is_array($navs)): $i = 0; $__LIST__ = $navs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$nav): $mod = ($i % 2 );++$i;?><li <?php echo (getActive($nav["c"])); ?>><a href="/<?php echo ($nav["m"]); ?>/<?php echo ($nav["c"]); ?>/<?php echo ($nav["f"]); ?>"><?php echo ($nav["name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
 </ul>
 		</div>
